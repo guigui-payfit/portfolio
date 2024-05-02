@@ -18,3 +18,17 @@ Once all pre-requisites are installed on your machine, run the following command
 ```shell
 yarn start
 ```
+
+## Deploy the app on GitHub Pages
+
+Run the following commands in your terminal at the root of the project to deploy the app on GitHub Pages:
+
+```shell
+git fetch --prune
+git checkout gh-pages
+git rebase origin/main
+ng build --output-path docs --base-href https://guigui-payfit.github.io/portfolio/
+cp docs/browser/* docs
+rm -rf docs/browser
+git push -f
+```
