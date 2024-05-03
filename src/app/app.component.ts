@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: "app-root",
   standalone: true,
   styleUrl: "./app.component.scss",

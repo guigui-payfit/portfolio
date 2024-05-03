@@ -1,0 +1,67 @@
+@import "media-queries";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--secondary-foreground-color);
+  font-family: var(--default-font-family);
+  font-size: var(--default-font-size);
+}
+
+button {
+  background-color: var(--primary-foreground-color);
+  border: 0;
+  border-radius: var(--button-border-radius);
+  color: var(--secondary-foreground-color);
+  cursor: pointer;
+  font-family: var(--default-font-family);
+  font-size: var(--default-font-size);
+  padding: 1rem 2rem;
+  position: relative;
+  transition: var(--transition);
+  z-index: 1;
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+  &::after {
+    background: radial-gradient(
+      ellipse,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(50, 50, 50, 0) 50%,
+      rgba(50, 50, 50, 0.6) 100%
+    );
+    border-radius: var(--button-border-radius);
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: var(--transition);
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+h1 {
+  font-family: var(--title-font-family);
+  font-size: calc(4 * var(--default-font-size));
+  margin: 1rem;
+  text-align: center;
+  @include sm {
+    font-size: calc(3 * var(--default-font-size));
+  }
+  @include xs {
+    font-size: calc(2 * var(--default-font-size));
+  }
+}
+
+html {
+  font-size: 62.5%; // 62.5% x 16px === 10px, thus 1rem === 10px
+}

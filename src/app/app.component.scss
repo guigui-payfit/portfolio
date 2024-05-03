@@ -1,0 +1,19 @@
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  justify-content: center;
+  min-height: 50vh;
+  position: relative;
+  &::after {
+    background-image: url("../assets/images/coding-hands.webp");
+    background-size: cover;
+    content: "";
+    filter: saturate(50%);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+}
