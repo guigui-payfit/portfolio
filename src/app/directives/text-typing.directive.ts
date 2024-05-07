@@ -1,7 +1,11 @@
 import { AfterViewInit, Directive, ElementRef, Input } from "@angular/core";
 import { concat, interval, Observable, take, tap } from "rxjs";
 
-const UNBREAKABLE_SPACE = "\u00a0";
+export const TYPING_CURSOR = "|";
+export const TYPING_CURSOR_BLINKING_INTERVAL = 500; // expressed in milliseconds
+export const TYPING_CURSOR_BLINKS = 2;
+export const TYPING_INTERVAL = 50; // expressed in milliseconds
+export const UNBREAKABLE_SPACE = "\u00a0";
 
 @Directive({
   selector: "[appTextTyping]",
@@ -10,10 +14,6 @@ const UNBREAKABLE_SPACE = "\u00a0";
 export class TextTypingDirective implements AfterViewInit {
   private _alreadyTypedText = "";
   private _charactersToType!: string[];
-  private readonly _typingCursorBlinks = 2;
-  private readonly _typingCursorBlinkingInterval = 500; // expressed in milliseconds
-  private readonly _typingInterval = 50; // expressed in milliseconds
-  private readonly _typingCursor = "|";
 
   @Input() public delayTypingAfterWord?: string;
 
@@ -46,12 +46,12 @@ export class TextTypingDirective implements AfterViewInit {
     );
 
     const typingCursorBlinkingObservable = interval(
-      this._typingCursorBlinkingInterval
+      TYPING_CURSOR_BLINKING_INTERVAL
     ).pipe(
-      take(this._typingCursorBlinks * 2),
+      take(TYPING_CURSOR_BLINKS * 2),
       tap((emittedNumber) => {
         if (emittedNumber % 2 === 0) {
-          childTextNode.nodeValue = this._alreadyTypedText + this._typingCursor;
+          childTextNode.nodeValue = this._alreadyTypedText + TYPING_CURSOR;
         } else {
           childTextNode.nodeValue = this._alreadyTypedText + UNBREAKABLE_SPACE;
         }
@@ -79,7 +79,7 @@ export class TextTypingDirective implements AfterViewInit {
     childTextNode: Node,
     numberOfCharacters: number
   ): Observable<number> {
-    return interval(this._typingInterval).pipe(
+    return interval(TYPING_INTERVAL).pipe(
       take(numberOfCharacters),
       tap((emittedNumber) => {
         const letterToType = this._charactersToType.shift();
@@ -87,7 +87,7 @@ export class TextTypingDirective implements AfterViewInit {
         if (emittedNumber === numberOfCharacters - 1) {
           childTextNode.nodeValue = this._alreadyTypedText + UNBREAKABLE_SPACE;
         } else {
-          childTextNode.nodeValue = this._alreadyTypedText + this._typingCursor;
+          childTextNode.nodeValue = this._alreadyTypedText + TYPING_CURSOR;
         }
       })
     );
