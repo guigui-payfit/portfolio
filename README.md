@@ -9,20 +9,38 @@ Pre-requisites:
 - You must have [`Node.js`](https://nodejs.org/en) installed on your machine.
 - You must have the `yarn` package manager installed on your machine. You can install it with `npm` (which comes bundled with Node.js when you install it on your system) by running the following command in your terminal:
 
-```shell
+```sh
 npm install --global yarn
 ```
 
 Once all pre-requisites are installed on your machine, run the following command at the root of the project in your terminal:
 
-```shell
+```sh
 yarn start
 ```
 
 ## Deploy the app on GitHub Pages
 
-Run the following command in your terminal at the root of the project to deploy the app on GitHub Pages:
+### From your Linux or MacOS machine (Unix systems)
 
-```shell
+If you are on a Unix OS, run the following command in your terminal at the root of the project to deploy the app on GitHub Pages:
+
+```sh
 yarn deploy
+```
+
+### From your Windows machine
+
+If you are on a Windows OS, run the following commands in your terminal at the root of the project to deploy the app on GitHub Pages:
+
+```sh
+git fetch --prune
+git checkout gh-pages
+git rebase origin/main
+ng build --output-path docs --base-href https://guigui-payfit.github.io/portfolio/
+mv docs/browser/* docs
+rm -r docs/browser
+git add docs
+git commit --amend --no-edit
+git push -f
 ```
