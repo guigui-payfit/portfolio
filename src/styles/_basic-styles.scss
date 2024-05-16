@@ -6,13 +6,18 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   color: var(--secondary-foreground-color);
   font-family: var(--default-font-family);
   font-size: var(--default-font-size);
 }
 
-button {
+button,
+.button {
   background-color: var(--primary-foreground-color);
   border: 0;
   border-radius: var(--button-border-radius);
