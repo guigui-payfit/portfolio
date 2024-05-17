@@ -19,6 +19,13 @@
   }
 }
 
+// Landscape tablet and lower
+@mixin lte-md {
+  @media (max-width: 979px) {
+    @content;
+  }
+}
+
 // Desktop to large desktop
 @mixin lg {
   @media (min-width: 980px) and (max-width: 1199px) {

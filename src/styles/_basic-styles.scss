@@ -11,7 +11,7 @@ a {
 }
 
 body {
-  color: var(--secondary-foreground-color);
+  color: var(--default-text-color);
   font-family: var(--default-font-family);
   font-size: var(--default-font-size);
 }
@@ -55,6 +55,7 @@ button,
 }
 
 h1 {
+  color: var(--secondary-foreground-color);
   font-family: var(--title-font-family);
   font-size: calc(4 * var(--default-font-size));
   margin: 1rem;
