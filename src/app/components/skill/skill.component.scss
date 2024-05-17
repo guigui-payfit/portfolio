@@ -1,0 +1,35 @@
+@import "media-queries";
+
+li {
+  align-items: center;
+  background-color: #eee;
+  border-radius: 1rem;
+  display: flex;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 1;
+  &::after {
+    align-items: center;
+    background-color: var(--progress-bar-color);
+    border-radius: 1rem 3rem 3rem 1rem;
+    content: attr(progressValue);
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    left: 0;
+    padding-right: 1rem;
+    position: absolute;
+    top: 0;
+    width: var(--progress-value);
+    z-index: -1;
+    @include xs {
+      content: "";
+    }
+  }
+  svg {
+    height: 3rem;
+    margin-right: 1rem;
+    width: 3rem;
+  }
+}

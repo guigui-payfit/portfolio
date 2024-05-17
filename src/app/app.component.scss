@@ -21,18 +21,17 @@
 }
 
 .developer-profile {
+  margin: auto;
+  width: 70%;
   .presentation {
     align-items: center;
     display: flex;
     gap: 10rem;
     justify-content: center;
-    margin: auto;
     padding: 5rem 0;
-    width: 70%;
     @include lte-md {
       flex-direction: column;
       gap: 5rem;
-      width: 90%;
     }
     img {
       border-radius: 50%;
@@ -44,5 +43,11 @@
         margin-bottom: 3rem;
       }
     }
+  }
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
   }
 }

@@ -1,0 +1,17 @@
+<li
+  [attr.progressValue]="progressValue.toString() + '%'"
+  [style.--progress-value]="progressValue.toString() + '%'"
+  [style.--progress-bar-color]="progressBarColor"
+>
+  <svg [attr.aria-label]="svgIcon.title" role="img">
+    <title>{{ svgIcon.title }}</title>
+    <use
+      [attr.xlink:href]="
+        'assets/images/' + svgIcon.fileName + '.svg#' + svgIcon.fileName
+      "
+    ></use>
+  </svg>
+  <span aria-hidden="true">
+    <ng-content></ng-content>
+  </span>
+</li>

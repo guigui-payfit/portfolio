@@ -9,8 +9,8 @@
   </section>
   <section class="developer-profile">
     <div class="presentation">
-      <img src="assets/images/guillaume-cornu.webp" alt="Guillaume CORNU" />
-      <div class="text-presentation">
+      <img alt="Guillaume CORNU" src="assets/images/guillaume-cornu.webp" />
+      <aside class="text-presentation">
         <p>
           J'ai découvert la programmation informatique avec le langage Python
           pendant mes études en école d'ingénieur. Mais n'ayant aucun diplôme
@@ -19,12 +19,100 @@
           interne à l'entreprise : le JetLang.
         </p>
         <p>
-          Pendant mon temps libre, j'ai pu acquérir en autodidacte plusieurs
-          compétences relatives au métier de développeur, ce qui m'a permis
-          d'accomplir une transition professionnelle et de devenir développeur
-          au sein de la même entreprise.
+          Pendant mon temps libre, j'ai pu acquérir en
+          <strong>autodidacte</strong> plusieurs compétences relatives au métier
+          de développeur, ce qui m'a permis d'accomplir une transition
+          professionnelle et de devenir <strong>développeur</strong> au sein de
+          la même entreprise.
         </p>
-      </div>
+      </aside>
     </div>
+    <h2>Mes compétences</h2>
+    <ul class="skills">
+      <app-skill
+        [progressBarColor]="'rgba(255, 50, 50, 0.3)'"
+        [progressValue]="95"
+        [svgIcon]="{ fileName: 'html-logo', title: 'HTML' }"
+      >
+        HTML
+      </app-skill>
+      <app-skill
+        [progressBarColor]="'rgba(255, 0, 200, 0.3)'"
+        [progressValue]="95"
+        [svgIcon]="{ fileName: 'sass-logo', title: 'SASS' }"
+      >
+        CSS/SCSS
+      </app-skill>
+      <app-skill
+        [progressBarColor]="'rgba(0, 100, 255, 0.3)'"
+        [progressValue]="90"
+        [svgIcon]="{ fileName: 'typescript-logo', title: 'TypeScript' }"
+      >
+        JavaScript/TypeScript
+      </app-skill>
+      <app-skill
+        [progressBarColor]="'rgba(255, 0, 0, 0.3)'"
+        [progressValue]="80"
+        [svgIcon]="{ fileName: 'angular-logo', title: 'Angular' }"
+      >
+        Angular
+      </app-skill>
+      <app-skill
+        [progressBarColor]="'rgba(255, 150, 0, 0.3)'"
+        [progressValue]="80"
+        [svgIcon]="{ fileName: 'git-logo', title: 'Git' }"
+      >
+        Git
+      </app-skill>
+      <app-skill
+        [progressBarColor]="'rgba(0, 180, 0, 0.3)'"
+        [progressValue]="70"
+        [svgIcon]="{ fileName: 'mongodb-logo', title: 'MongoDB' }"
+      >
+        MongoDB
+      </app-skill>
+      <app-skill
+        [progressBarColor]="'rgba(255, 0, 50, 0.3)'"
+        [progressValue]="70"
+        [svgIcon]="{ fileName: 'nestjs-logo', title: 'NestJS' }"
+      >
+        NestJS
+      </app-skill>
+      <app-skill
+        [progressBarColor]="'rgba(0, 150, 255, 0.3)'"
+        [progressValue]="60"
+        [svgIcon]="{ fileName: 'docker-logo', title: 'Docker' }"
+      >
+        Docker
+      </app-skill>
+      <app-skill
+        [progressBarColor]="'rgba(0, 200, 255, 0.3)'"
+        [progressValue]="60"
+        [svgIcon]="{ fileName: 'react-logo', title: 'React' }"
+      >
+        React
+      </app-skill>
+      <app-skill
+        [progressBarColor]="'rgba(0, 0, 0, 0.3)'"
+        [progressValue]="50"
+        [svgIcon]="{ fileName: 'github-actions-logo', title: 'GitHub Actions' }"
+      >
+        GitHub Actions
+      </app-skill>
+      <app-skill
+        [progressBarColor]="'rgba(0, 0, 255, 0.3)'"
+        [progressValue]="50"
+        [svgIcon]="{ fileName: 'kubernetes-logo', title: 'Kubernetes' }"
+      >
+        Kubernetes (K8S)
+      </app-skill>
+      <app-skill
+        [progressBarColor]="'rgba(0, 130, 0, 0.3)'"
+        [progressValue]="50"
+        [svgIcon]="{ fileName: 'nginx-logo', title: 'NGINX' }"
+      >
+        NGINX
+      </app-skill>
+    </ul>
   </section>
 </main>
