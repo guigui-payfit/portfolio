@@ -12,6 +12,13 @@
   }
 }
 
+// Landscape phone and below to portrait tablet
+@mixin lte-sm {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
 // Portrait to landscape tablet and desktop
 @mixin md {
   @media (min-width: 768px) and (max-width: 979px) {

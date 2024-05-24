@@ -115,4 +115,57 @@
       </app-skill>
     </ul>
   </section>
+  <section class="projects">
+    <h2>Projets</h2>
+    <app-project
+      [image]="'assets/images/kasa.webp'"
+      [sourceCodeLink]="'https://github.com/guigui-payfit/kasa'"
+      [title]="'Kasa'"
+      [websiteLink]="'https://guigui-payfit.github.io/kasa/'"
+    >
+      <p description>
+        Implémentation du front-end d'une application web de location
+        immobilière à partir d'une maquette
+      </p>
+      <ul objectives>
+        <li>Créer une expérience utilisateur moderne et réactive</li>
+        <li>
+          Implémenter une interface responsive à partir d'une maquette
+          (animations comprises)
+        </li>
+        <li>Utiliser des données simulées extraites d'un fichier JSON</li>
+      </ul>
+      <ul technologies>
+        <li>React & React Router</li>
+        <li>SASS</li>
+        <li>Figma</li>
+      </ul>
+    </app-project>
+    <app-project
+      [image]="'assets/images/mon-vieux-grimoire.webp'"
+      [sourceCodeLink]="'https://github.com/guigui-payfit/mon-vieux-grimoire'"
+      [title]="'Mon Vieux Grimoire'"
+    >
+      <p description>
+        Implémentation du back-end d'un site de notation de livres
+      </p>
+      <ul objectives>
+        <li>
+          Implémenter un modèle logique de données conformément à une
+          documentation technique
+        </li>
+        <li>Implémenter une authentification avec JWT</li>
+        <li>Mettre en oeuvre des opérations CRUD de manière sécurisée</li>
+        <li>
+          Green code : compression des images téléchargées par l'utilisateur et
+          suppression des anciennes images plus utilisées
+        </li>
+      </ul>
+      <ul technologies>
+        <li>NodeJS (express)</li>
+        <li>MongoDB</li>
+        <li>Docker</li>
+      </ul>
+    </app-project>
+  </section>
 </main>

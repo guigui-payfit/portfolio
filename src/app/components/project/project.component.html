@@ -1,0 +1,39 @@
+<article>
+  <div class="header">
+    <h3>{{ title }}</h3>
+    <div class="button-container">
+      @if (websiteLink) {
+      <a class="button" href="{{ websiteLink }}" target="_blank">
+        <span class="button-label">Site internet</span>
+        <svg [attr.aria-label]="'Site internet du projet ' + title" role="img">
+          <title>Site internet du projet {{ title }}</title>
+          <use [attr.xlink:href]="'assets/images/website.svg#website'"></use>
+        </svg>
+      </a>
+      }
+      <a class="button" href="{{ sourceCodeLink }}" target="_blank">
+        <span class="button-label">Code source</span>
+        <svg [attr.aria-label]="'Code source du projet ' + title" role="img">
+          <title>Code source du projet {{ title }}</title>
+          <use
+            [attr.xlink:href]="
+              'assets/images/github-actions-logo.svg#github-actions-logo'
+            "
+          ></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="article-content-container">
+    <div class="text-content-container">
+      <ng-content select="[description]"></ng-content>
+      <h4>Objectifs</h4>
+      <ng-content select="[objectives]"></ng-content>
+      <h4>Technologies utilisées</h4>
+      <ng-content select="[technologies]"></ng-content>
+    </div>
+    <a href="{{ image }}" target="_blank">
+      <img alt="{{ title }}" src="{{ image }}" />
+    </a>
+  </div>
+</article>

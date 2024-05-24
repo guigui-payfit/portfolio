@@ -75,3 +75,11 @@ h2 {
 html {
   font-size: 62.5%; // 62.5% x 16px === 10px, thus 1rem === 10px
 }
+
+li {
+  list-style: circle inside;
+}
+
+svg {
+  fill: currentColor;
+}
