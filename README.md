@@ -21,6 +21,8 @@ yarn start
 
 ## Deploy the app on GitHub Pages
 
+You can visit the staging website at the following URL: https://guigui-payfit.github.io/portfolio.
+
 ### From your Linux or MacOS machine (Unix systems)
 
 If you are on a Unix OS, run the following command in your terminal at the root of the project to deploy the app on GitHub Pages:
