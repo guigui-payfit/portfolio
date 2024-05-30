@@ -54,6 +54,59 @@ button,
   }
 }
 
+footer {
+  color: var(--secondary-foreground-color);
+  position: relative;
+  &::after {
+    background-image: url("../assets/images/contact.webp");
+    background-position: 0 20%;
+    background-size: cover;
+    content: "";
+    filter: brightness(70%) grayscale(50%);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+  .container {
+    margin: auto;
+    padding: 5rem 0;
+    width: 70%;
+    @include sm {
+      width: 80%;
+    }
+    @include xs {
+      width: 90%;
+    }
+    h2 {
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .row {
+      align-items: center;
+      display: flex;
+      gap: 1rem;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      a {
+        color: var(--secondary-foreground-color);
+        text-decoration: underline;
+        transition: var(--transition);
+        &:hover {
+          color: #f1c40f;
+          transition: var(--transition);
+        }
+      }
+      svg {
+        height: var(--default-font-size);
+        width: var(--default-font-size);
+      }
+    }
+  }
+}
+
 h1 {
   color: var(--secondary-foreground-color);
   font-family: var(--title-font-family);
