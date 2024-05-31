@@ -1,5 +1,28 @@
+<header
+  [ngClass]="isHeaderTransparent ? 'transparent-header' : 'opaque-header'"
+>
+  <nav>
+    <ul>
+      <li>
+        <a href="assets/pdfs/guillaume-cornu-cv.pdf">CV</a>
+      </li>
+      <li>
+        <a href="#presentation">Présentation</a>
+      </li>
+      <li>
+        <a href="#skills">Mes compétences</a>
+      </li>
+      <li>
+        <a href="#projects">Projets</a>
+      </li>
+      <li>
+        <a href="#contact">Me contacter</a>
+      </li>
+    </ul>
+  </nav>
+</header>
 <main>
-  <section class="cv-access-section">
+  <section id="cv-access-section">
     <h1 appTextTyping [delayTypingAfterWord]="'CORNU'">
       Guillaume CORNU - Développeur web
     </h1>
@@ -7,10 +30,10 @@
       Mon CV
     </a>
   </section>
-  <section class="developer-profile">
-    <div class="presentation">
+  <section id="developer-profile">
+    <div id="presentation">
       <img alt="Guillaume CORNU" src="assets/images/guillaume-cornu.webp" />
-      <aside class="text-presentation">
+      <aside id="text-presentation">
         <p>
           J'ai découvert la programmation informatique avec le langage Python
           pendant mes études en école d'ingénieur. Mais n'ayant aucun diplôme
@@ -27,7 +50,7 @@
         </p>
       </aside>
     </div>
-    <h2>Mes compétences</h2>
+    <h2 id="skills">Mes compétences</h2>
     <ul class="skills">
       <app-skill
         [progressBarColor]="'rgba(255, 50, 50, 0.3)'"
@@ -115,7 +138,7 @@
       </app-skill>
     </ul>
   </section>
-  <section class="projects">
+  <section id="projects">
     <h2>Projets</h2>
     <app-project
       [image]="'assets/images/kasa.webp'"
@@ -169,7 +192,7 @@
     </app-project>
   </section>
 </main>
-<footer>
+<footer id="contact">
   <div class="container">
     <h2>Me contacter</h2>
     <div class="row">

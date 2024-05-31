@@ -1,6 +1,47 @@
 @import "media-queries";
 
-.cv-access-section {
+header {
+  background-color: white;
+  box-shadow: 0px 2px 2px 0px grey;
+  a {
+    color: var(--default-text-color);
+    &:hover {
+      color: var(--primary-foreground-color);
+    }
+  }
+  &.transparent-header {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    a {
+      color: var(--secondary-foreground-color);
+      position: relative;
+      &:hover {
+        &::after {
+          animation: 0.3s ease-out open-background;
+          background-color: rgba(0, 0, 0, 0.5);
+          content: "";
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          transition: var(--transition);
+          width: 100%;
+          z-index: -1;
+          @keyframes open-background {
+            0% {
+              transform: scaleX(0);
+            }
+            100% {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#cv-access-section {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -20,7 +61,7 @@
   }
 }
 
-.developer-profile {
+#developer-profile {
   margin: auto;
   width: 70%;
   @include sm {
@@ -29,7 +70,7 @@
   @include xs {
     width: 90%;
   }
-  .presentation {
+  #presentation {
     align-items: center;
     display: flex;
     gap: 10rem;
@@ -44,7 +85,7 @@
       height: 20rem;
       width: 20rem;
     }
-    .text-presentation {
+    #text-presentation {
       > *:not(:last-child) {
         margin-bottom: 3rem;
       }
@@ -58,7 +99,7 @@
   }
 }
 
-.projects {
+#projects {
   margin: auto;
   padding: 5rem 0;
   width: 70%;

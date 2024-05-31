@@ -7,6 +7,7 @@
 }
 
 a {
+  color: var(--secondary-foreground-color);
   text-decoration: none;
 }
 
@@ -91,7 +92,6 @@ footer {
         margin-bottom: 1rem;
       }
       a {
-        color: var(--secondary-foreground-color);
         text-decoration: underline;
         transition: var(--transition);
         &:hover {
@@ -123,6 +123,43 @@ h1 {
 
 h2 {
   text-align: center;
+}
+
+header {
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 85%;
+    @include sm {
+      width: 90%;
+    }
+    @include xs {
+      width: 97.5%;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      li {
+        list-style: none;
+        a {
+          line-height: 3rem;
+          padding: 1rem 2rem;
+          transition: var(--transition);
+          @include sm {
+            padding: 1rem 1rem;
+          }
+          @include xs {
+            padding: 1rem 0.5rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 html {
